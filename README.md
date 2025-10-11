@@ -5,3 +5,4 @@
 * Ejemplo 3: Máquina virtual conectada a dos redes con DHCP
 * Ejemplo 4: Máquina virtual conectada a dos res: una con DHCP otra con direccionamiento estático
 * Ejemplo 5: Dos máquinas virtuales conectadas entre sí
+* Ejemplo 6: Generados de escenarios con módulos
