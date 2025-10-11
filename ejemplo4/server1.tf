@@ -34,8 +34,8 @@ resource "libvirt_domain" "server1" {
  
   # Forzar que la red se cree antes de la VM
   depends_on = [
-    libvirt_network.nat_dhcp,
-    libvirt_network.aislada_static 
+    libvirt_network.nat-dhcp,
+    libvirt_network.aislada-static 
   ]
   
   network_interface {
@@ -49,16 +49,9 @@ resource "libvirt_domain" "server1" {
   }
 
 
-  disk {
-    volume_id = libvirt_volume.server1-disk.id
-  }
-
+  disk {volume_id = libvirt_volume.server1-disk.id}
   # Segundo disco
-  disk {
-    volume_id = libvirt_volume.disk-extra1.id
-  }
-
-
+  disk {volume_id = libvirt_volume.disk-extra1.id}
   cloudinit = libvirt_cloudinit_disk.server1-cloudinit.id
 
 }

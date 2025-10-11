@@ -21,8 +21,8 @@ module "server1" {
   network_config = "${path.module}/cloud-init/server1/network-config.yaml"
 
   depends_on = [
-    libvirt_network.nat_dhcp,
-    libvirt_network.muy_aislada
+    libvirt_network.nat-dhcp,
+    libvirt_network.muy-aislada
   ]
 }
 
@@ -42,7 +42,5 @@ module "server2" {
   user_data = "${path.module}/cloud-init/server2/user-data.yaml"
   network_config = "${path.module}/cloud-init/server2/network-config.yaml"
 
-  depends_on = [
-    libvirt_network.muy_aislada
-  ]
+  depends_on = [libvirt_network.muy-aislada]
 }

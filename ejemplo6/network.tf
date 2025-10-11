@@ -6,7 +6,7 @@
 # Red NAT con DHCP 
 ##############################################
 
-resource "libvirt_network" "nat_dhcp" {
+resource "libvirt_network" "nat-dhcp" {
   name      = "nat-dhcp"
   mode      = "nat"
   domain    = "example.com"
@@ -22,7 +22,7 @@ resource "libvirt_network" "nat_dhcp" {
 # Red NAT sin DHCP
 ##############################################
 
-#resource "libvirt_network" "nat_static" {
+#resource "libvirt_network" "nat-static" {
 #  name      = "nat-static"
 #  mode      = "nat"
 #  addresses = ["192.168.110.0/24"]
@@ -38,7 +38,7 @@ resource "libvirt_network" "nat_dhcp" {
 ##############################################
 
 
-#resource "libvirt_network" "aislada_dhcp" {
+#resource "libvirt_network" "aislada-dhcp" {
 #  name      = "aislada-dhcp"
 #  mode = "none"
 #  bridge    = "virbr12"
@@ -54,7 +54,7 @@ resource "libvirt_network" "nat_dhcp" {
 # Red aislada sin DHCP
 ##############################################
 
-#resource "libvirt_network" "aislada_static" {
+#resource "libvirt_network" "aislada-static" {
 #  name      = "aislada-static"
 #  autostart = true
 #  mode = "none"
@@ -66,7 +66,7 @@ resource "libvirt_network" "nat_dhcp" {
 ##############################################
 # Red muy aislada
 ##############################################
-resource "libvirt_network" "muy_aislada" {
+resource "libvirt_network" "muy-aislada" {
   name   = "muy-aislada"
   mode   = "none"      # sin conectividad
  bridge    = "virbr14"
@@ -76,7 +76,7 @@ resource "libvirt_network" "muy_aislada" {
 ##############################################
 # Red puenteada (bridge) con interfaz física br0
 ##############################################
-#resource "libvirt_network" "bridge_br0" {
+#resource "libvirt_network" "bridge-br0" {
 #  name   = "bridge-br0"
 #  mode   = "bridge"
 #  bridge = "br0"

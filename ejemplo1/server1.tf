@@ -26,12 +26,7 @@ resource "libvirt_domain" "server1" {
     network_name   = "default"
     wait_for_lease = true
   }
-
-  disk {
-    volume_id = libvirt_volume.server1-disk.id
-  }
-
+  disk {volume_id = libvirt_volume.server1-disk.id}
   cloudinit = libvirt_cloudinit_disk.server1-cloudinit.id
-
 }
 

@@ -30,7 +30,9 @@ resource "libvirt_domain" "server1" {
   memory = 1024
   vcpu   = 2
 
-  
+  # Forzar que la red se cree antes de la VM
+  depends_on = [libvirt_network.nat-dhcp]
+
   network_interface {
     network_name   = "nat-dhcp"
     wait_for_lease = true
@@ -42,17 +44,9 @@ resource "libvirt_domain" "server1" {
     wait_for_lease = true
   }
 
-
-  disk {
-    volume_id = libvirt_volume.server1-disk.id
-  }
-
+  disk {volume_id = libvirt_volume.server1-disk.id}
   # Segundo disco
-  disk {
-    volume_id = libvirt_volume.disk-extra1.id
-  }
-
-
+  disk {volume_id = libvirt_volume.disk-extra1.id}
   cloudinit = libvirt_cloudinit_disk.server1-cloudinit.id
 
 }
