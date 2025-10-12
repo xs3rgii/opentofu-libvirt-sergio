@@ -12,9 +12,8 @@ resource "libvirt_network" "nat-dhcp" {
   domain    = "example.com"
   addresses = ["192.168.100.0/24"]
   bridge    = "virbr10"
-  dhcp {
-    enabled = true
-  }
+  dhcp {enabled = true}
+  dns {enabled = true}
   autostart = true
 }
 
@@ -27,9 +26,7 @@ resource "libvirt_network" "nat-dhcp" {
 #  mode      = "nat"
 #  addresses = ["192.168.110.0/24"]
 #  bridge    = "virbr11"
-#  dhcp {
-#    enabled = false
-#  }
+#  dhcp {enabled = false}
 #  autostart = true
 #}
 
@@ -43,9 +40,8 @@ resource "libvirt_network" "nat-dhcp" {
 #  mode = "none"
 #  bridge    = "virbr12"
 #  addresses = ["192.168.120.0/24"]
-#  dhcp {
-#    enabled = false
-#  }
+# dhcp {enabled = true}
+# dns {enabled = true}
 #  autostart = true
 
 
@@ -60,6 +56,7 @@ resource "libvirt_network" "aislada-static" {
   mode = "none"
   bridge    = "virbr13"
   addresses = ["192.168.130.0/24"]
+  dhcp {enabled = false}
 }
 
 
