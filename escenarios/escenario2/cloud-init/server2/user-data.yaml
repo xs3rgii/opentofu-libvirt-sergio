@@ -23,13 +23,11 @@ runcmd:
   - sed -i 's/^XKBLAYOUT=.*/XKBLAYOUT="es"/' /etc/default/keyboard
   - setupcon
   - localectl set-x11-keymap es || true
-  - ip r del default
-  - ip route add default via 10.0.0.1
-  - cp /tmp/index.html /var/www/html/
-  - cp /tmp/img.jpg /var/www/html/
-  - cp /tmp/htaccess /var/www/html/.htaccess
-  - cp -r /tmp/carpeta /var/www/html/
-  - cp -r /tmp/nuevodirectorio /var/www/html/
-  - cp /tmp/apache2.conf /etc/apache2/apache2.conf
-  - chown -R www-data: /var/www/html/
+  - cp /tmp/ficheros/index.html /var/www/html/
+  - cp /tmp/ficheros/img.jpg /var/www/html/
+  - cp /tmp/ficheros/htaccess /var/www/html/.htaccess
+  - cp -r /tmp/ficheros/carpeta /var/www/html/
+  - cp -r /tmp/ficheros/nuevodirectorio /var/www/html/
+  - cp /tmp/ficheros/apache2.conf /etc/apache2/apache2.conf
+  - chown -R www-data:www-data /var/www/html/
   - systemctl restart apache2
