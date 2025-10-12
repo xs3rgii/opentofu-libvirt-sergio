@@ -11,4 +11,5 @@
 
 ## Escenarios
 
-* Escenario 1: Servidor web y cliente (máquinas debian) para prácticas de servidores web.
+* Escenario 1: Servidor web y cliente para prácticas de servidores web.
+* Escenario 2: proxy y backend para prácticas de proxy inverso
