@@ -13,17 +13,10 @@ chpasswd:
     - name: debian
       password: asdasd
       type: text
-package_update: true
-packages:
-  - kbd
-  - console-data
-  - apache2
-  - iptables
+
 runcmd:
-  - loadkeys es
-  - sed -i 's/^XKBLAYOUT=.*/XKBLAYOUT="es"/' /etc/default/keyboard
-  - setupcon
-  - localectl set-x11-keymap es || true
+  - apt update
+  - apt install -y apache2 iptables
   - sysctl -w net.ipv4.ip_forward=1
   - iptables -t nat -A POSTROUTING -s 10.0.0.0/24 -j MASQUERADE
   - systemctl enable apache2

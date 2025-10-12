@@ -22,7 +22,7 @@ resource "libvirt_cloudinit_disk" "cloudinit" {
   count          = var.user_data != null ? 1 : 0
   name           = "${var.name}-cloudinit.iso"
   pool           = var.pool_name
-  user_data      = file(var.user_data)
+  user_data      = join("\n", ["#cloud-config", yamlencode(local.merged)])
   network_config = var.network_config != null ? file(var.network_config) : null
 }
 

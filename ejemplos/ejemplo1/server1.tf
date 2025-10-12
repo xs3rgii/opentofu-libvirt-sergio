@@ -11,7 +11,7 @@ resource "libvirt_volume" "server1-disk" {
 resource "libvirt_cloudinit_disk" "server1-cloudinit" {
   name           = "server1-cloudinit.iso"
   pool           = var.libvirt_pool_name
-  user_data      = file("${path.module}/cloud-init/server1/user-data.yaml")
+  user_data      = join("\n", ["#cloud-config", yamlencode(local.merged)])
   network_config = ""
 }
 

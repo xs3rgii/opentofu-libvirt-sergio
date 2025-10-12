@@ -13,17 +13,10 @@ chpasswd:
     - name: debian
       password: asdasd
       type: text
-package_update: true
-packages:
-  - kbd
-  - console-data
-  - apache2
 runcmd:
-  - loadkeys es
-  - sed -i 's/^XKBLAYOUT=.*/XKBLAYOUT="es"/' /etc/default/keyboard
-  - setupcon
-  - localectl set-x11-keymap es || true
-  - cp /tmp/ficheros/index.html /var/www/html/
+  - apt update
+  - apt install -y apache2
+    - cp /tmp/ficheros/index.html /var/www/html/
   - cp /tmp/ficheros/img.jpg /var/www/html/
   - cp /tmp/ficheros/htaccess /var/www/html/.htaccess
   - cp -r /tmp/ficheros/carpeta /var/www/html/

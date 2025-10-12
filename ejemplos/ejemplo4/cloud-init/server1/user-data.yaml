@@ -14,11 +14,3 @@ chpasswd:
       password: asdasd
       type: text
 package_update: true
-packages:
-  - kbd
-  - console-data
-runcmd:
-  - loadkeys es
-  - sed -i 's/^XKBLAYOUT=.*/XKBLAYOUT="es"/' /etc/default/keyboard
-  - setupcon
-  - localectl set-x11-keymap es || true

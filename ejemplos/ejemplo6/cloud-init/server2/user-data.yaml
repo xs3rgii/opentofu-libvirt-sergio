@@ -1,10 +1,5 @@
 #cloud-config
 hostname: server2
-locale: es_ES.UTF-8
-keyboard:
-  layout: es
-  variant: ''
-timezone: Europe/Madrid
 users:
   - name: ubuntu
     sudo: ALL=(ALL) NOPASSWD:ALL
