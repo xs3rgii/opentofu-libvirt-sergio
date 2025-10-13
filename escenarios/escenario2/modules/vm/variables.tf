@@ -42,7 +42,7 @@ variable "disks" {
 variable "networks" {
   description = "Lista de redes a conectar"
   type = list(object({
-    network_name = string
+    network_name   = string
     wait_for_lease = optional(bool)
   }))
   default = []

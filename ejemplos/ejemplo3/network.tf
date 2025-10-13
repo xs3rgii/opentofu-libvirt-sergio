@@ -12,8 +12,8 @@ resource "libvirt_network" "nat-dhcp" {
   domain    = "example.com"
   addresses = ["192.168.100.0/24"]
   bridge    = "virbr10"
-  dhcp {enabled = true}
-  dns {enabled = true}
+  dhcp { enabled = true }
+  dns { enabled = true }
   autostart = true
 }
 

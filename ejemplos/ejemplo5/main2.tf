@@ -3,7 +3,7 @@
 resource "libvirt_volume" "server2-disk" {
   name           = "server2-linked.qcow2"
   pool           = var.libvirt_pool_name
-  base_volume_id = "${var.libvirt_pool_path}/ubuntu2404-base.qcow2" 
+  base_volume_id = "${var.libvirt_pool_path}/ubuntu2404-base.qcow2"
   format         = "qcow2"
 }
 
@@ -23,10 +23,10 @@ resource "libvirt_domain" "server2" {
 
 
   network_interface {
-    network_id   = libvirt_network.muy-aislada.id
+    network_id = libvirt_network.muy-aislada.id
   }
 
-  disk {volume_id = libvirt_volume.server2-disk.id}
+  disk { volume_id = libvirt_volume.server2-disk.id }
   cloudinit = libvirt_cloudinit_disk.server2-cloudinit.id
 
 }

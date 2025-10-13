@@ -3,7 +3,7 @@
 resource "libvirt_volume" "server1-disk" {
   name           = "server1-linked.qcow2"
   pool           = var.libvirt_pool_name
-  base_volume_id = "${var.libvirt_pool_path}/debian13-base.qcow2" 
+  base_volume_id = "${var.libvirt_pool_path}/debian13-base.qcow2"
   format         = "qcow2"
 }
 
@@ -17,10 +17,10 @@ resource "libvirt_cloudinit_disk" "server1-cloudinit" {
 
 # Disco extra 1
 resource "libvirt_volume" "disk-extra1" {
-  name           = "server1-disk-extra1.qcow2"
-  pool           = var.libvirt_pool_name
-  format         = "qcow2"
-  size           = 1 * 1024 * 1024 * 1024  # 1 GB en bytes
+  name   = "server1-disk-extra1.qcow2"
+  pool   = var.libvirt_pool_name
+  format = "qcow2"
+  size   = 1 * 1024 * 1024 * 1024 # 1 GB en bytes
 }
 
 
@@ -30,9 +30,9 @@ resource "libvirt_domain" "server1" {
   memory = 1024
   vcpu   = 2
 
-  
+
   network_interface {
-    network_id   = libvirt_network.nat-dhcp.id
+    network_id     = libvirt_network.nat-dhcp.id
     wait_for_lease = true
   }
 
@@ -42,9 +42,9 @@ resource "libvirt_domain" "server1" {
     wait_for_lease = true
   }
 
-  disk {volume_id = libvirt_volume.server1-disk.id}
+  disk { volume_id = libvirt_volume.server1-disk.id }
   # Segundo disco
-  disk {volume_id = libvirt_volume.disk-extra1.id}
+  disk { volume_id = libvirt_volume.disk-extra1.id }
   cloudinit = libvirt_cloudinit_disk.server1-cloudinit.id
 
 }

@@ -10,19 +10,19 @@ locals {
 
   networks = {
     nat-dhcp = {
-      name       = "nat-dhcp"
-      mode       = "nat"
-      domain     = "example.com"
-      addresses  = ["192.168.100.0/24"]
-      bridge     = "virbr10"
-      dhcp       = true
-      dns        = true
-      autostart  = true
+      name      = "nat-dhcp"
+      mode      = "nat"
+      domain    = "example.com"
+      addresses = ["192.168.100.0/24"]
+      bridge    = "virbr10"
+      dhcp      = true
+      dns       = true
+      autostart = true
     }
 
     muy-aislada = {
       name      = "muy-aislada"
-      mode      = "none"      # sin conectividad
+      mode      = "none" # sin conectividad
       bridge    = "virbr14"
       autostart = true
     }

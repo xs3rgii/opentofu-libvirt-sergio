@@ -12,8 +12,8 @@ resource "libvirt_network" "nat-dhcp" {
   domain    = "example.com"
   addresses = ["192.168.100.0/24"]
   bridge    = "virbr10"
-  dhcp {enabled = true}
-  dns {enabled = true}
+  dhcp { enabled = true }
+  dns { enabled = true }
   autostart = true
 }
 
@@ -64,9 +64,9 @@ resource "libvirt_network" "nat-dhcp" {
 # Red muy aislada
 ##############################################
 resource "libvirt_network" "muy-aislada" {
-  name   = "muy-aislada"
-  mode   = "none"      # sin conectividad
- bridge    = "virbr14"
+  name      = "muy-aislada"
+  mode      = "none" # sin conectividad
+  bridge    = "virbr14"
   autostart = true
 }
 

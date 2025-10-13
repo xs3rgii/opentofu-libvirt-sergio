@@ -12,8 +12,8 @@ resource "libvirt_network" "nat-dhcp" {
   domain    = "example.com"
   addresses = ["192.168.100.0/24"]
   bridge    = "virbr10"
-  dhcp {enabled = true}
-  dns {enabled = true}
+  dhcp { enabled = true }
+  dns { enabled = true }
   autostart = true
 }
 
@@ -53,10 +53,10 @@ resource "libvirt_network" "nat-dhcp" {
 resource "libvirt_network" "aislada-static" {
   name      = "aislada-static"
   autostart = true
-  mode = "none"
+  mode      = "none"
   bridge    = "virbr13"
   addresses = ["192.168.130.0/24"]
-  dhcp {enabled = false}
+  dhcp { enabled = false }
 }
 
 
