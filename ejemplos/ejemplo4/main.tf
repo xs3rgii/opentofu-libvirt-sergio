@@ -30,22 +30,15 @@ resource "libvirt_domain" "server1" {
   memory = 1024
   vcpu   = 2
 
- 
- 
-  # Forzar que la red se cree antes de la VM
-  depends_on = [
-    libvirt_network.nat-dhcp,
-    libvirt_network.aislada-static 
-  ]
-  
+   
   network_interface {
-    network_name   = "nat-dhcp"
+    network_id   = libvirt_network.nat-dhcp.id
     wait_for_lease = true
   }
 
   # Red 2: Red aislada-static
   network_interface {
-    network_name   = "aislada-static"
+    network_id   = libvirt_network.aislada-static.id
   }
 
 

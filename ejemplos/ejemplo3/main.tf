@@ -30,11 +30,9 @@ resource "libvirt_domain" "server1" {
   memory = 1024
   vcpu   = 2
 
-  # Forzar que la red se cree antes de la VM
-  depends_on = [libvirt_network.nat-dhcp]
-
+  
   network_interface {
-    network_name   = "nat-dhcp"
+    network_id   = libvirt_network.nat-dhcp.id
     wait_for_lease = true
   }
 
