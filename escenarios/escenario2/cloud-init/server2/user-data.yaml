@@ -16,7 +16,7 @@ chpasswd:
 runcmd:
   - apt update
   - apt install -y apache2
-    - cp /tmp/ficheros/index.html /var/www/html/
+  - cp /tmp/ficheros/index.html /var/www/html/
   - cp /tmp/ficheros/img.jpg /var/www/html/
   - cp /tmp/ficheros/htaccess /var/www/html/.htaccess
   - cp -r /tmp/ficheros/carpeta /var/www/html/

@@ -36,9 +36,8 @@ resource "libvirt_domain" "vm" {
   dynamic "network_interface" {
     for_each = var.networks
     content {
-      network_name = network_interface.value.network_name
-      wait_for_lease = try(network_interface.value.wait_for_lease, false)
-      
+      network_id     = network_interface.value.network_id
+      wait_for_lease = lookup(network_interface.value, "wait_for_lease", false)
     }
   }
 
