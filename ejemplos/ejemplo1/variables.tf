@@ -14,5 +14,5 @@ variable "libvirt_pool_name" {
 variable "libvirt_pool_path" {
   type        = string
   description = "Ruta local del directorio asociado al pool de almacenamiento libvirt."
-  default     = "/var/lib/libvirt/images/"
+  default     = "/var/lib/libvirt/images"
 }
