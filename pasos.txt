@@ -1,0 +1,5 @@
+tocar las variables: datos del pool
+tocar cloud-init/server1/user-data.yaml: configurar usuarios de las maquinas
+tocar main tf: imagen base, name, memory, vcpu y network
+
+

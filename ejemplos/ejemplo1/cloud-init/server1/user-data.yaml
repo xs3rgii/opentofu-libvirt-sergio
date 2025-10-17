@@ -1,7 +1,7 @@
 #cloud-config
 hostname: server1
 users:
-  - name: usuario
+  - name: debian
     sudo: ALL=(ALL) NOPASSWD:ALL
     groups: users, admin
     shell: /bin/bash
