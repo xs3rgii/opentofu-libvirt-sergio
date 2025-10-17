@@ -10,7 +10,7 @@ users:
 chpasswd:
   expire: False
   users:
-    - name: usuario
+    - name: debian
       password: usuario
       type: text
 package_update: true
