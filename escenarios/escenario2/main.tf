@@ -36,7 +36,7 @@ module "server" {
 
   networks = [
     for n in each.value.networks : {
-      network_id     = module.network.ids[n.network_name]
+      network_id     = module.network[n.network_name].id
       wait_for_lease = lookup(n, "wait_for_lease", false)
     }
   ]
