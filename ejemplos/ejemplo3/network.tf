@@ -17,6 +17,7 @@ resource "libvirt_network" "nat-dhcp" {
   autostart = true
 }
 
+
 ##############################################
 # Red NAT sin DHCP
 ##############################################
@@ -49,14 +50,14 @@ resource "libvirt_network" "nat-dhcp" {
 # Red aislada sin DHCP
 ##############################################
 
-#resource "libvirt_network" "aislada-static" {
-#  name      = "aislada-static"
-#  mode      = "isolated"
-#    addresses = ["192.168.130.0/24"]
-# bridge    = "virbr13"
-# dhcp {enabled = false}
-#  autostart = true
-#}
+resource "libvirt_network" "aislada-static" {
+  name      = "aislada-static"
+  mode      = "none"
+  addresses = ["192.168.130.0/24"]
+  bridge    = "virbr13"
+  dhcp {enabled = false}
+  autostart = true
+}
 
 ##############################################
 # Red muy aislada

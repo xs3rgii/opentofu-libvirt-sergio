@@ -4,6 +4,4 @@ network:
     ens3:
       dhcp4: true
     ens4: 
-      dhcp4: true
-      
-
+      dhcp4: false

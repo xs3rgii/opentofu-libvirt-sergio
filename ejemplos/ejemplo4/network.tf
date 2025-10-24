@@ -57,6 +57,7 @@ resource "libvirt_network" "aislada-static" {
   bridge    = "virbr13"
   addresses = ["192.168.130.0/24"]
   dhcp { enabled = false }
+
 }
 
 

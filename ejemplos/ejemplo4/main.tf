@@ -41,11 +41,8 @@ resource "libvirt_domain" "server1" {
     network_id = libvirt_network.aislada-static.id
   }
 
-
   disk { volume_id = libvirt_volume.server1-disk.id }
-  # Segundo disco
-  disk { volume_id = libvirt_volume.disk-extra1.id }
+  disk { volume_id = libvirt_volume.disk-extra1.id}
   cloudinit = libvirt_cloudinit_disk.server1-cloudinit.id
-
 }
 

@@ -30,10 +30,9 @@ resource "libvirt_domain" "server1" {
   memory = 1024
   vcpu   = 2
 
-
+# Red 1: Red aislada sin dhcp
   network_interface {
-    network_id     = libvirt_network.nat-dhcp.id
-    wait_for_lease = true
+    network_id     = libvirt_network.aislada-static.id
   }
 
   # Red 2: Red default
@@ -43,9 +42,5 @@ resource "libvirt_domain" "server1" {
   }
 
   disk { volume_id = libvirt_volume.server1-disk.id }
-  # Segundo disco
-  disk { volume_id = libvirt_volume.disk-extra1.id }
-  cloudinit = libvirt_cloudinit_disk.server1-cloudinit.id
-
 }
 
