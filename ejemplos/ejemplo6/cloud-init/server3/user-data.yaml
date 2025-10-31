@@ -1,7 +1,7 @@
 #cloud-config
-hostname: servidorweb
+hostname: server3
 users:
-  - name: debian
+  - name: ubuntu
     sudo: ALL=(ALL) NOPASSWD:ALL
     groups: users, admin
     shell: /bin/bash
@@ -10,7 +10,7 @@ users:
 chpasswd:
   expire: False
   users:
-    - name: debian
+    - name: ubuntu
       password: asdasd
       type: text
-
+package_update: true
