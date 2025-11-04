@@ -2,10 +2,10 @@ all:
   children:
     servidores_web:
       hosts:
-        backend:
-          ansible_host:
+        backend: 
+          ansible_host: 192.168.101.237
           ansible_user: debian
-          ansible_ssh_private_key_file: ~/.ssh/id_rsa
+          ansible_ssh_private_key_file: ~/.ssh/llaveasir
           
 
     
